@@ -39,3 +39,6 @@ EQF
 #Execution du gnuplot avec le sript cree
 gnuplot "$gnuplot_script"
 xdg-open "d2/demo/traitementd2.png"
+
+#Suppression du fichier de script temporaire
+rm "$gnuplot_script"
