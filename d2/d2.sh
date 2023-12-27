@@ -1,5 +1,5 @@
 #!/bin/bash
-# Commande awk
+# Commande awk pour additionner les kilométrages en fonction d'une personne
 grandedistance_csv=$(awk -F';' '{DistanceTotale[$6]+=$5} END {for (person in DistanceTotale) print person ";" DistanceTotale[person]}' data/data.csv | sort -t';' -k2nr | head -n 10)
 
 echo "$grandedistance_csv" > d2/tmp/grandedistance_csv
