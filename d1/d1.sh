@@ -28,7 +28,7 @@ set title "Nombre de trajets par conducteur" #Titre
 
 set datafile separator ';' #Separation des colonnes par des ;
 
-set yrange [0:*]      #Commence a zero, trouve le max depuis les data
+set yrange [0:*]      #Commence a zero, trouve le max depuis les donnees
 set style fill solid  #Boites solides colorees
 unset key             #Supprime tous les titres
 
