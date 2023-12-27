@@ -2,6 +2,7 @@
 # Commande awk pour additionner les kilométrages en fonction d'une personne
 grandedistance_csv=$(awk -F';' '{DistanceTotale[$6]+=$5} END {for (person in DistanceTotale) print person ";" DistanceTotale[person]}' data/data.csv | sort -t';' -k2nr | head -n 10)
 
+#enregistre les donnees dans un fichier temporaire
 echo "$grandedistance_csv" > d2/tmp/grandedistance_csv
 
 listetriee_csv=$(echo "$grandedistance_csv" | sort -t';' -k2n)
@@ -14,7 +15,7 @@ echo "$listetriee_csv" > d2/tmp/listetriee_csv
 gnuplot_script="d2/demo/gnuplot_script.txt"
 
 
-# Utilisez Gnuplot pour crÃ©er le graphique
+# Utilisez Gnuplot pour creer le graphique
 cat << 'EQF' > "$gnuplot_script"
 
 set terminal png
