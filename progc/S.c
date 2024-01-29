@@ -15,7 +15,7 @@ struct Node {
 
 
 
-
+// Structure des informations d'un noeud
 struct Info {
     float diff;
     int trajet;
@@ -64,14 +64,14 @@ void freeNode(struct Node *node) {
         return;
     }
     
-    // Libérer la mémoire récursivement pour les enfants (left et right)
+    // Libere la mémoire récursivement pour les enfants (left et right)
     freeNode(node->left);
     freeNode(node->right);
     
-    // Libérer la mémoire pour la structure Info à laquelle ville pointe
+    // Libere la mémoire pour la structure Info à laquelle ville pointe
     free(node->ville);
     
-    // Enfin, libérer la mémoire pour le nœud actuel
+    // Enfin, libere la mémoire pour le nœud actuel
     free(node);
 }
 
