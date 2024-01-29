@@ -24,7 +24,7 @@ while true; do
 
     case $value in
         0)
-              echo -e "\e[33m"
+  echo -e "\e[33m"
   echo "      ██████╗██╗   ██╗  ████████╗██████╗ ██╗   ██╗ ██████╗██╗  ██╗"
   echo "     ██╔════╝╚██╗ ██╔╝  ╚══██╔══╝██╔══██╗██║   ██║██╔════╝██║ ██╔╝"
   echo "     ██║      ╚████╔╝█████╗██║   ██████╔╝██║   ██║██║     █████╔╝ "
@@ -32,12 +32,12 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo -e "                  \xF0\x9F\x94\xB6 Conducteurs avec le plus de trajets \xF0\x9F\x94\xB6"
-            echo "                   Conducteurs et la plus grande distance"
-            echo "                       Les 10 trajets les plus longs"
-            echo "                    Les 10 villes les plus traversées"
-            echo "                      Statistiques sur les étapes"
-            echo "              [Bonus] Conducteur avec le plus de ville traversé "
+  echo -e "                  \xF0\x9F\x94\xB6 Conducteurs avec le plus de trajets \xF0\x9F\x94\xB6"
+  echo "                   Conducteurs et la plus grande distance"
+  echo "                       Les 10 trajets les plus longs"
+  echo "                    Les 10 villes les plus traversées"
+  echo "                      Statistiques sur les étapes"
+  echo "              [Bonus] Conducteur avec le plus de ville traversé "
 
 
 
@@ -52,12 +52,12 @@ while true; do
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
             
-            echo "                     Conducteurs avec le plus de trajets "
-            echo -e "                \xF0\x9F\x94\xB6 Conducteurs et la plus grande distance \xF0\x9F\x94\xB6"
-            echo "                       Les 10 trajets les plus longs"
-            echo "                    Les 10 villes les plus traversées"
-            echo "                      Statistiques sur les étapes"
-            echo "              [Bonus] Conducteur avec le plus de ville traversé "
+ echo "                     Conducteurs avec le plus de trajets "
+ echo -e "                \xF0\x9F\x94\xB6 Conducteurs et la plus grande distance \xF0\x9F\x94\xB6"
+ echo "                       Les 10 trajets les plus longs"
+ echo "                    Les 10 villes les plus traversées"
+ echo "                      Statistiques sur les étapes"
+ echo "              [Bonus] Conducteur avec le plus de ville traversé "
             ;;
         2)  
               echo -e "\e[33m"
@@ -68,12 +68,12 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                     Conducteurs avec le plus de trajets"
-            echo "                   Conducteurs et la plus grande distance"
-            echo -e "                    \xF0\x9F\x94\xB6 Les 10 trajets les plus longs \xF0\x9F\x94\xB6"
-            echo "                    Les 10 villes les plus traversées"
-            echo "                      Statistiques sur les étapes"
-            echo "              [Bonus] Conducteur avec le plus de ville traversé "
+  echo "                     Conducteurs avec le plus de trajets"
+  echo "                   Conducteurs et la plus grande distance"
+  echo -e "                    \xF0\x9F\x94\xB6 Les 10 trajets les plus longs \xF0\x9F\x94\xB6"
+  echo "                    Les 10 villes les plus traversées"
+  echo "                      Statistiques sur les étapes"
+  echo "              [Bonus] Conducteur avec le plus de ville traversé "
             ;;
          3)  
               echo -e "\e[33m"
@@ -84,12 +84,12 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                     Conducteurs avec le plus de trajets"
-            echo "                   Conducteurs et la plus grande distance"
-            echo "                       Les 10 trajets les plus longs"
-            echo -e "                 \xF0\x9F\x94\xB6 Les 10 villes les plus traversées \xF0\x9F\x94\xB6"
-            echo "                      Statistiques sur les étapes"
-            echo "              [Bonus] Conducteur avec le plus de ville traversé "
+  echo "                     Conducteurs avec le plus de trajets"
+  echo "                   Conducteurs et la plus grande distance"
+  echo "                       Les 10 trajets les plus longs"
+  echo -e "                 \xF0\x9F\x94\xB6 Les 10 villes les plus traversées \xF0\x9F\x94\xB6"
+  echo "                      Statistiques sur les étapes"
+  echo "              [Bonus] Conducteur avec le plus de ville traversé "
             ;;
            
           4)  
@@ -101,12 +101,12 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                     Conducteurs avec le plus de trajets"
-            echo "                   Conducteurs et la plus grande distance"
-            echo "                       Les 10 trajets les plus longs"
-            echo "                    Les 10 villes les plus traversées "
-            echo -e "                   \xF0\x9F\x94\xB6 Statistiques sur les étapes \xF0\x9F\x94\xB6"
-	    echo "              [Bonus] Conducteur avec le plus de ville traversé "
+  echo "                     Conducteurs avec le plus de trajets"
+  echo "                   Conducteurs et la plus grande distance"
+  echo "                       Les 10 trajets les plus longs"
+  echo "                    Les 10 villes les plus traversées "
+  echo -e "                   \xF0\x9F\x94\xB6 Statistiques sur les étapes \xF0\x9F\x94\xB6"
+  echo "              [Bonus] Conducteur avec le plus de ville traversé "
             ;;
            5)  
               echo -e "\e[33m"
@@ -117,12 +117,12 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                     Conducteurs avec le plus de trajets"
-            echo "                   Conducteurs et la plus grande distance"
-            echo "                       Les 10 trajets les plus longs"
-            echo "                    Les 10 villes les plus traversées "
-            echo "                      Statistiques sur les étapes"
-            echo -e "           \xF0\x9F\x94\xB6 [Bonus] Conducteur avec le plus de ville traversé   \xF0\x9F\x94\xB6"
+  echo "                     Conducteurs avec le plus de trajets"
+  echo "                   Conducteurs et la plus grande distance"
+  echo "                       Les 10 trajets les plus longs"
+  echo "                    Les 10 villes les plus traversées "
+  echo "                      Statistiques sur les étapes"
+  echo -e "           \xF0\x9F\x94\xB6 [Bonus] Conducteur avec le plus de ville traversé   \xF0\x9F\x94\xB6"
 
 
             ;;
@@ -205,10 +205,10 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo -e "                           \xF0\x9F\x94\xB6 Traitement \xF0\x9F\x94\xB6"
-            echo "                        Vérification de fichier"
-            echo "                               Quitter"
-            echo "                                Help"
+  echo -e "                           \xF0\x9F\x94\xB6 Traitement \xF0\x9F\x94\xB6"
+  echo "                        Vérification de fichier"
+  echo "                               Quitter"
+  echo "                                Help"
 
 
 
@@ -222,10 +222,10 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                              Traitement"
-            echo -e "                     \xF0\x9F\x94\xB6 Vérification de fichier \xF0\x9F\x94\xB6"
-            echo "                               Quitter"
-            echo "                                Help"
+  echo "                              Traitement"
+  echo -e "                     \xF0\x9F\x94\xB6 Vérification de fichier \xF0\x9F\x94\xB6"
+  echo "                               Quitter"
+  echo "                                Help"
             ;;
         2)  
               echo -e "\e[33m"
@@ -236,10 +236,10 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                              Traitement"
-            echo "                        Vérification de fichier"
-            echo -e "                            \xF0\x9F\x94\xB6 Quitter \xF0\x9F\x94\xB6"
-            echo "                                Help"
+  echo "                              Traitement"
+  echo "                        Vérification de fichier"
+  echo -e "                            \xF0\x9F\x94\xB6 Quitter \xF0\x9F\x94\xB6"
+  echo "                                Help"
             ;;
         
             3)  
@@ -251,21 +251,21 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-            echo "                              Traitement"
-            echo "                        Vérification de fichier"
-            echo "                               Quitter "
-            echo -e "                            \xF0\x9F\x94\xB6  Help \xF0\x9F\x94\xB6"
+  echo "                              Traitement"
+  echo "                        Vérification de fichier"
+  echo "                               Quitter "
+  echo -e "                            \xF0\x9F\x94\xB6  Help \xF0\x9F\x94\xB6"
             ;;
         *)
-            echo "La valeur nest pas dans la plage définie"
+  echo "La valeur nest pas dans la plage définie"
             ;;
     esac
     
-    echo -e "                                 \xF0\x9F\x9A\x9B"
-    echo "Utilisez les touches flèche vers le haut et vers le bas pour modifier la valeur Entrée pour terminer"
-    read -s -n 1 key
+  echo -e "                                 \xF0\x9F\x9A\x9B"
+  echo "Utilisez les touches flèche vers le haut et vers le bas pour modifier la valeur Entrée pour terminer"
+  read -s -n 1 key
 
-    case $key in
+  case $key in
         $'\033') # Check if the first character is the escape character
             read -s -n 2 key  # Read the next two characters
             case $key in
