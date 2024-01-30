@@ -13,7 +13,7 @@ struct Node {
 };
 
 
-
+// Strucuture des informations imporatantes d'un noeud
 struct Info {
     char nom[50];
     int nombre_trajet;
@@ -254,17 +254,15 @@ void freeTree(struct Node *root) {
 
 
 
-
-
 int main() {
-
     
     struct Info ville;
     struct Node *root = NULL;
 
-   
+    //Ouverture du fichier csv recuperer par le shell
     FILE *file = fopen("tmp/fusionne.csv", "r");
 
+    //Erreur si ouverture mal effectue
     if (file == NULL) {
         perror("Erreur lors de l'ouverture du fichier");
         return 0;
@@ -274,49 +272,19 @@ int main() {
     int k2, k3; // Variable pour stocker la valeur de la deuxième colonne (K2)
     int index = 0;
  
-   
-
   while (fscanf(file, "%[^;];%d;%d\n", k1, &k2, &k3) == 3) {
-  
-        
-                
                 strcpy(ville.nom, k1);
                 ville.nombre_trajet = k2;
                 ville.depart = k3;
-                root = insertNode(root, ville);
-                     
-                 
-              
-                 
+                root = insertNode(root, ville);             
     // printf("%d\n", i); 
-    
-            }
-        
-      
-               
-
-
-
-
-
-
-
-
-
-
- 
-
-      
+    }
     index = 0;
     struct CityWithTrajets topTen[10];
      
     storeCitiesInArray(root, topTen, &index);
     freeTree(root); 
-    
- 
-trierParNom(topTen, 10);
-
-
+    trierParNom(topTen, 10);
 
     FILE *fichier = fopen("tmp/tmp.txt", "w"); // Ouvre le fichier en mode écriture
 
@@ -327,31 +295,12 @@ trierParNom(topTen, 10);
         printf("Erreur lors de l'ouverture du fichier.\n");
     }
     
-  
-
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- FILE *files = fopen("tmp/tmp.txt", "w");
+    FILE *files = fopen("tmp/tmp.txt", "w");
 
     if (files == NULL) {
         printf("Erreur lors de l'ouverture du fichier.\n");
         return 0;
     }
-
-    
 
     for (int i = 0; i < 10; i++) {
         fprintf(files, "%s;%d;%d\n", topTen[i].nom, topTen[i].nombre_trajet, topTen[i].depart);
@@ -360,24 +309,8 @@ trierParNom(topTen, 10);
     fclose(files);
     printf("Les données ont été écrites avec succès dans tmp.txt");
 
-
-  
-  
-  
-  
-  
-
     return 0;
+
 }
    
     
-    
-
-
-
-
-
-
-
-
-      
