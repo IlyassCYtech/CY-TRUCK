@@ -15,7 +15,7 @@ struct Node {
 
 
 
-// Structure des informations d'un noeud
+// Structure des informations pour réaliser la statistique d'un noeud
 struct Info {
     float diff;
     int trajet;
@@ -27,7 +27,7 @@ struct Info {
 
 
 
-
+// Tableau de structure de la liste
 struct CityWithTrajets {
     float diff;
     int trajet;
@@ -39,13 +39,11 @@ struct CityWithTrajets {
 
 
 
-
-
-
+// stocke les informations des villes dans un tableau
 void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, int *index) {
-    if (root != NULL && *index < 50) {
+    if (root != NULL && *index < 50) {                      // Vérifie si le nœud actuel n'est pas nul et que l'indice est inférieur à 50
         storeCitiesInArray(root->right, citiesArray, index);
-if (*index < 50) {  // Ajoutez cette condition
+if (*index < 50) {                                         // Ajoute les informations de la ville au tableau si l'indice est inférieur à 50             
         citiesArray[*index].diff = root->ville->diff;
         citiesArray[*index].trajet = root->ville->trajet;
         citiesArray[*index].moyenne = root->ville->moyenne;
@@ -58,7 +56,7 @@ if (*index < 50) {  // Ajoutez cette condition
 }
 
 
-
+// fonction pour libérer la mémoire d'un noeud de l'arbre
 void freeNode(struct Node *node) {
     if (node == NULL) {
         return;
@@ -80,8 +78,6 @@ void freeNode(struct Node *node) {
 
 
 
-
-
 // Fonction pour obtenir la hauteur d'un nœud
 int getHeight(struct Node *N) {
     if (N == NULL)
@@ -94,14 +90,16 @@ int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
+
+// Fonction pour créer un nouveau noeud avec les informations de la ville
 struct Node *newNode(struct Info ville) {
-    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));      // Alloue de la mémoire pour le nouveau noeud
     if (node == NULL) {
         // Gestion de l'échec d'allocation pour le nœud
         return NULL;
     }
 
-    node->ville = (struct Info *)malloc(sizeof(struct Info));
+    node->ville = (struct Info *)malloc(sizeof(struct Info));          // Alloue de la mémoire pour la structure Info du noeud
     if (node->ville == NULL) {
         // Gestion de l'échec d'allocation pour node->ville
       free(node); // Libération de la mémoire allouée pour le nœud
@@ -109,13 +107,14 @@ struct Node *newNode(struct Info ville) {
     }
 
     
-    
+    // Copie les valeurs de la ville dans la nouvelle structure Info du nœud
     node->ville->diff = ville.diff;
     node->ville->trajet = ville.trajet;
     node->ville->moyenne = ville.moyenne;
     node->ville->min = ville.min;
     node->ville->max = ville.max;
 
+    // Initialise les enfants du noeuf
     node->left = NULL;
     node->right = NULL;
     node->height = 1;
@@ -214,12 +213,6 @@ struct Node *insertNode(struct Node *node, struct Info ville) {
 
 
 
-
-
-
-
-
-
 // Fonction utilitaire pour afficher l'arbre AVL en ordre croissant
 void inorderTraversal(struct Node *root) {
     if (root != NULL) {
@@ -240,15 +233,14 @@ void inorderTraversal(struct Node *root) {
 
 
 
-
-
 int main() {
 
     // Initialisation de l'arbre AVL
     struct Info ville;
     struct Node *root = NULL;
 
-    
+
+    // Ouverture du fichier CSV
     FILE *file = fopen("tmp/done.csv", "r");
 
     if (file == NULL) {
@@ -256,11 +248,13 @@ int main() {
         return 0;
     }
 
+    // Déclaration de variables pour stocker les valeurs des colonnes du fichier CSV
     int k1; // Variable pour stocker la valeur de la première colonne (K1)
     float k2, k3, k4; // Variable pour stocker la valeur de la deuxième colonne (K2)
     int index = 0;
    
 
+ // Lecture des lignes du fichiers CSV 
  while (fscanf(file, "%d;%f;%f;%f\n", &k1, &k2, &k3, &k4) == 4) {
         
               ville.trajet = k1;
@@ -269,48 +263,23 @@ int main() {
               ville.max=k4;
               ville.moyenne=k2;
               root = insertNode(root, ville);
-                     
-                   
-                 
-                
-            
-         
         } 
     
 
-
+// Fermeture du fichier après avoir terminer la lecture
  fclose(file); 
-        
-
-
-
-
-
-
  
 
   
     index = 0;
-    struct CityWithTrajets topTen[50];
-    storeCitiesInArray(root, topTen, &index);
-    freeNode(root);
-    
-    
-    
-    
-
-  
-    
-    
-    
-    
-    
- 
+    struct CityWithTrajets topTen[50];            // Déclaration d'un tableau de structures pour stocker les dix premières villes
+    storeCitiesInArray(root, topTen, &index);     // Stockage des informations des villes dans le tableau
+    freeNode(root);                               // Libération de la mémoire allouée
     
     
     
 
-
+    
 
     FILE *fichier = fopen("demo/S.txt", "w"); // Ouvre le fichier en mode écriture
 
@@ -320,23 +289,16 @@ int main() {
     } else {
         printf("Erreur lors de l'ouverture du fichier.\n");
     }
+ 
+ 
+ 
+ 
+
     
-  
+ 
+ FILE *files = fopen("demo/S.txt", "w");                        // Ouvre le fichier en mode écriture
 
- 
-
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- FILE *files = fopen("demo/S.txt", "w");
-
+    // Vérification de la réussite d'ouverture du fichier ou non
     if (files == NULL) {
         printf("Erreur lors de l'ouverture du fichier.\n");
         return 0;
@@ -344,22 +306,20 @@ int main() {
 
     
 
+
+    
+    // Boucle qui écrit les données fans le fichier
     for (int i = 0; i < 50; i++) {
         fprintf(files, "%d;%d;%f;%f;%f;0\n", i, topTen[i].trajet, topTen[i].moyenne, topTen[i].max, topTen[i].min);
     }
 
-    fclose(files);
+    fclose(files);                        // Ferme le fichier après écriture                                                               
    
     printf("Les données ont été écrites avec succès dans txt.csv \n");
 
 
 
-
-  
-
-
-  
-  
+    
 
     return 0;
 }
