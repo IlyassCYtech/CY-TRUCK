@@ -12,9 +12,6 @@ struct Node {
     int height;
 };
 
-
-
-
 // Structure des informations pour réaliser la statistique d'un noeud
 struct Info {
     float diff;
@@ -23,9 +20,6 @@ struct Info {
     float min;
     float max;
 };
-
-
-
 
 // Tableau de structure de la liste
 struct CityWithTrajets {
@@ -36,8 +30,6 @@ struct CityWithTrajets {
     float max;
     
 };
-
-
 
 // stocke les informations des villes dans un tableau
 void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, int *index) {
@@ -54,7 +46,6 @@ if (*index < 50) {                                         // Ajoute les informa
         storeCitiesInArray(root->left, citiesArray, index);
     }
 }
-
 
 // fonction pour libérer la mémoire d'un noeud de l'arbre
 void freeNode(struct Node *node) {
@@ -73,11 +64,6 @@ void freeNode(struct Node *node) {
     free(node);
 }
 
-
-
-
-
-
 // Fonction pour obtenir la hauteur d'un nœud
 int getHeight(struct Node *N) {
     if (N == NULL)
@@ -89,7 +75,6 @@ int getHeight(struct Node *N) {
 int max(int a, int b) {
     return (a > b) ? a : b;
 }
-
 
 // Fonction pour créer un nouveau noeud avec les informations de la ville
 struct Node *newNode(struct Info ville) {
@@ -106,7 +91,6 @@ struct Node *newNode(struct Info ville) {
         return NULL;
     }
 
-    
     // Copie les valeurs de la ville dans la nouvelle structure Info du nœud
     node->ville->diff = ville.diff;
     node->ville->trajet = ville.trajet;
@@ -121,11 +105,6 @@ struct Node *newNode(struct Info ville) {
     
     return node;
 }
-
-
-
-
-
 
 // Fonction pour faire une rotation droite
 struct Node *rightRotate(struct Node *y) {
@@ -210,9 +189,6 @@ struct Node *insertNode(struct Node *node, struct Info ville) {
     return node;
 }
 
-
-
-
 // Fonction utilitaire pour afficher l'arbre AVL en ordre croissant
 void inorderTraversal(struct Node *root) {
     if (root != NULL) {
@@ -228,9 +204,6 @@ void inorderTraversal(struct Node *root) {
         inorderTraversal(root->right);
     }
 }
-
-
-
 
 
 int main() {
@@ -264,23 +237,14 @@ int main() {
               ville.moyenne=k2;
               root = insertNode(root, ville);
         } 
-    
-
 // Fermeture du fichier après avoir terminer la lecture
  fclose(file); 
- 
-
-  
+    
     index = 0;
     struct CityWithTrajets topTen[50];            // Déclaration d'un tableau de structures pour stocker les dix premières villes
     storeCitiesInArray(root, topTen, &index);     // Stockage des informations des villes dans le tableau
     freeNode(root);                               // Libération de la mémoire allouée
     
-    
-    
-
-    
-
     FILE *fichier = fopen("demo/S.txt", "w"); // Ouvre le fichier en mode écriture
 
     if (fichier != NULL) {
@@ -289,13 +253,7 @@ int main() {
     } else {
         printf("Erreur lors de l'ouverture du fichier.\n");
     }
- 
- 
- 
- 
 
-    
- 
  FILE *files = fopen("demo/S.txt", "w");                        // Ouvre le fichier en mode écriture
 
     // Vérification de la réussite d'ouverture du fichier ou non
@@ -303,10 +261,6 @@ int main() {
         printf("Erreur lors de l'ouverture du fichier.\n");
         return 0;
     }
-
-    
-
-
     
     // Boucle qui écrit les données fans le fichier
     for (int i = 0; i < 50; i++) {
@@ -318,20 +272,6 @@ int main() {
     printf("Les données ont été écrites avec succès dans txt.csv \n");
 
 
-
-    
-
     return 0;
 }
    
-    
-    
-
-
-
-
-
-
-
-
-      
