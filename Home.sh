@@ -22,6 +22,7 @@ value=0
 while true; do
     clear
 
+#affichage du menu
     case $value in
         0)
   echo -e "\e[33m"
@@ -134,6 +135,7 @@ while true; do
             ;;
     esac
 
+#se promener dans le menu
     echo "Utilisez les touches z et s pour modifier la valeur. Appuyez sur r pour quitter."
     read -s -n 1 key
 
