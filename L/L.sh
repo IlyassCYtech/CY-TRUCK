@@ -44,7 +44,7 @@ plot 'demo/L.txt' using 2:xtic(1) with histograms title 'Distance'
 EOF
 
 #___________________________________________________________________________________________
-#                                    Derniere commande
+#                                    Dernieres commandes
 #___________________________________________________________________________________________
 
 #Exécution de gnuplot avec le script créé
