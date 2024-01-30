@@ -1,5 +1,5 @@
 #!/bin/bash
-
+if [ $# -eq 0 ]; then
 # Chemin du dossier contenant le fichier
 dossier="data"
 
@@ -355,11 +355,11 @@ done
   if [ $value -eq 0 ]; then
   		
 	while true; do
-   	 read -p "Entrez la taille du tableau (entre 1 et 5) : " taille
+   	 read -p "Entrez la taille du tableau (entre 1 et 6) : " taille
   	  if [[ "$taille" =~ ^[1-6]$ ]]; then
    	     break
   	  else
-  	      echo "Veuillez entrer une valeur entre 1 et 5."
+  	      echo "Veuillez entrer une valeur entre 1 et 6."
 	    fi
 	done
 	tableau=()
@@ -465,6 +465,134 @@ for ((i=1; i<=$taille; i++)); do
 esac
 done
 
+fi
 
 
 
+for arg in "$@"; do
+        if [ "$arg" = "-h" ]; then
+            # Votre code à exécuter si -h est passé en argument
+            echo "Aide : Ce script prend en charge l'option -h."
+            exit 0
+        fi
+    done
+ 
+ if [ "$#" -lt 1 ]; then
+
+    exit 1
+fi
+
+dossier="data"
+ 
+ # Vérification de l'existence du dossier
+if [ ! -d "$dossier" ]; then
+    echo "Le dossier $dossier n'existe pas."
+    exit 1
+fi
+
+
+# Récupérer le premier argument
+chemin_fichier="$1" 
+
+# Vérifier si le fichier existe et a l'extension .csv
+if [ -f "$chemin_fichier" ] && [[ "$chemin_fichier" == *.csv ]]; then
+    echo "Le fichier $chemin_fichier est un fichier .csv valide."
+
+    # Copier le fichier vers le dossier "data/"
+    dossier_data="data/"
+    mkdir -p "$dossier_data"  # Créer le dossier s'il n'existe pas
+    cp "$chemin_fichier" "$dossier_data"
+    echo "Le fichier a été copié vers $dossier_data."
+else
+    echo "Le fichier $chemin_fichier n'existe pas ou n'a pas l'extension .csv."
+    exit 1
+fi
+
+
+
+ 
+
+# Vérification du nombre de fichiers dans le dossier
+nb_fichiers=$(ls -1 "$dossier" | wc -l)
+if [ "$nb_fichiers" -ne 1 ]; then
+    echo "Le dossier $dossier ne doit contenir qu'un seul fichier."
+    exit 1
+fi
+
+# Vérification si le fichier est un .csv
+fichier=$(ls "$dossier"/*.csv 2>/dev/null)
+if [ -z "$fichier" ]; then
+    echo "Le fichier dans $dossier n'est pas un fichier .csv ou n'existe pas."
+    exit 1
+fi
+
+   clear
+  echo -e "\e[33m"
+  echo "      ██████╗██╗   ██╗  ████████╗██████╗ ██╗   ██╗ ██████╗██╗  ██╗"
+  echo "     ██╔════╝╚██╗ ██╔╝  ╚══██╔══╝██╔══██╗██║   ██║██╔════╝██║ ██╔╝"
+  echo "     ██║      ╚████╔╝█████╗██║   ██████╔╝██║   ██║██║     █████╔╝ "
+  echo "     ██║       ╚██╔╝ ╚════╝██║   ██╔══██╗██║   ██║██║     ██╔═██╗ "
+  echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
+  echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
+
+shift
+for arg in "$@"; do
+        case "$arg" in
+    -d1 | -D1)
+        chemin_du_script="d1/d1.sh"  # Chemin complet vers le script à exécuter
+        if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
+            bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
+        else
+            echo "Le fichier feur.sh n'existe pas dans le dossier spécifié."
+        fi
+        ;;
+  
+    -d2 | -D2)
+        chemin_du_script="d2/d2.sh"  # Chemin complet vers le script à exécuter
+        if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
+            bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
+        else
+            echo "Le fichier feur.sh n'existe pas dans le dossier spécifié."
+        fi
+        ;;
+    
+    -L| -l)
+        chemin_du_script="L/L.sh"  # Chemin complet vers le script à exécuter
+        if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
+            bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
+        else
+            echo "Le fichier L.sh n'existe pas dans le dossier spécifié."
+        fi
+        ;;
+    -t | -T)
+        script="T/T.sh"  # Chemin complet vers le script à exécuter
+        if [ -f "$script" ]; then  # Vérifier si le fichier existe
+            bash "$script" "$fichier" # Exécuter le script avec bash
+        else
+            echo "Le fichier T.sh n'existe pas dans le dossier spécifié."
+        fi
+        ;;
+     -S| -s)
+        chemin_du_script="S/S.sh"  # Chemin complet vers le script à exécuter
+        if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
+            bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
+        else
+            echo "Le fichier S.sh n'existe pas dans le dossier spécifié."
+        fi
+        ;;   
+    -bonus | -Bonus | -BONUS)
+        chemin_du_script="bonus/bonus.sh"  # Chemin complet vers le script à exécuter
+        if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
+            bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
+        else
+            echo "Le fichier bonus.sh n'existe pas dans le dossier spécifié."
+        fi
+        ;;
+    
+    
+    *)
+        echo "erreur d'argument"
+        exit 0
+        ;;
+esac
+    done
