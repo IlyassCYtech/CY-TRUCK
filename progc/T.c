@@ -12,7 +12,6 @@ struct Node {
     int height;
 };
 
-
 // Strucuture des informations imporatantes d'un noeud
 struct Info {
     char nom[50];
@@ -20,17 +19,14 @@ struct Info {
     int depart;
 };
 
-
-
-
+// Structure des infomations final de notre fichier de sortie
 struct CityWithTrajets {
     char nom[50];
     int nombre_trajet;
     int depart;
 };
 
-
-
+// Copies les informations des villes dans un tableau
 void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, int *index) {
     if (root != NULL && *index < 10) {
         storeCitiesInArray(root->right, citiesArray, index);
@@ -46,7 +42,7 @@ void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, 
     }
 }
 
-
+// Trie le tableau de strucure CityWithTrajets en fonction des noms de villes par odre alphabetique
 void trierParNom(struct CityWithTrajets *cities, int taille) {
     for (int i = 0; i < taille - 1; i++) {
         for (int j = i + 1; j < taille; j++) {
@@ -60,37 +56,6 @@ void trierParNom(struct CityWithTrajets *cities, int taille) {
     }
 }
 
-
-/*
-
-void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, int *index) {
-    if (root != NULL && *index < 10) {
-        storeCitiesInArray(root->right, citiesArray, index);
-
-        strcpy(citiesArray[*index].nom, root->ville->nom);
-        citiesArray[*index].nombre_trajet = root->ville->nombre_trajet;
-        citiesArray[*index].depart= root->ville->depart;
-        (*index)++;
-
-        storeCitiesInArray(root->left, citiesArray, index);
-    }
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Fonction pour obtenir la hauteur d'un nœud
 int getHeight(struct Node *N) {
     if (N == NULL)
@@ -103,23 +68,19 @@ int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
+// Fonction creation d'un noeud
 struct Node *newNode(struct Info ville) {
     struct Node *node = (struct Node *)malloc(sizeof(struct Node));
     if (node == NULL) {
         // Gestion de l'échec d'allocation pour le nœud
         return NULL;
     }
-
     node->ville = (struct Info *)malloc(sizeof(struct Info));
     if (node->ville == NULL) {
         // Gestion de l'échec d'allocation pour node->ville
         free(node); // Libération de la mémoire allouée pour le nœud
         return NULL;
     }
-
-    
-
-    
     strcpy(node->ville->nom, ville.nom);
     node->ville->nombre_trajet = ville.nombre_trajet;
     node->ville->depart = ville.depart;
@@ -131,7 +92,9 @@ struct Node *newNode(struct Info ville) {
     return node;
 }
 
-
+//_________________________________________________________________
+//                        FONCTIONS AVL
+//_________________________________________________________________
 // Fonction pour faire une rotation droite
 struct Node *rightRotate(struct Node *y) {
     struct Node *x = y->left;
@@ -166,25 +129,27 @@ struct Node *leftRotate(struct Node *x) {
 
 // Obtenir le facteur d'équilibre d'un nœud
 int getBalance(struct Node *N) {
-    if (N == NULL)
+    if (N == NULL){
         return 0;
+    }
     return getHeight(N->left) - getHeight(N->right);
 }
 
 // Fonction pour insérer un nœud dans un AVL
 struct Node *insertNode(struct Node *node, struct Info ville) {
     // Étape d'insertion standard pour un BST
-    if (node == NULL)
+    if (node == NULL){
         return newNode(ville);
-
-    if (ville.nombre_trajet < node->ville->nombre_trajet)
+    }
+    if (ville.nombre_trajet < node->ville->nombre_trajet){
         node->left = insertNode(node->left, ville);
-    else if (ville.nombre_trajet > node->ville->nombre_trajet)
+    }
+    else if (ville.nombre_trajet > node->ville->nombre_trajet){
         node->right = insertNode(node->right, ville);
+    }
     else {// Les éléments déjà présents ne sont pas autorisés
-      
         return node;
-}
+    }
     // Mise à jour de la hauteur du nœud parent
     node->height = 1 + max(getHeight(node->left), getHeight(node->right));
 
@@ -192,12 +157,14 @@ struct Node *insertNode(struct Node *node, struct Info ville) {
     int balance = getBalance(node);
 
     // Cas de déséquilibre : à gauche gauche
-    if (balance > 1 && ville.nombre_trajet < node->left->ville->nombre_trajet)
+    if (balance > 1 && ville.nombre_trajet < node->left->ville->nombre_trajet){
         return rightRotate(node);
+    }
 
     // Cas de déséquilibre : à droite droite
-    if (balance < -1 && ville.nombre_trajet > node->right->ville->nombre_trajet)
+    if (balance < -1 && ville.nombre_trajet > node->right->ville->nombre_trajet){
         return leftRotate(node);
+    }
 
     // Cas de déséquilibre : gauche droite
     if (balance > 1 && ville.nombre_trajet > node->left->ville->nombre_trajet) {
@@ -215,20 +182,6 @@ struct Node *insertNode(struct Node *node, struct Info ville) {
     return node;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Fonction utilitaire pour afficher l'arbre AVL en ordre croissant
 void inorderTraversal(struct Node *root) {
     if (root != NULL) {
@@ -243,6 +196,7 @@ void inorderTraversal(struct Node *root) {
     }
 }
 
+// Libere l'espace aloue pour l'avl
 void freeTree(struct Node *root) {
     if (root != NULL) {
         freeTree(root->left);
@@ -252,7 +206,9 @@ void freeTree(struct Node *root) {
     }
 }
 
-
+//_________________________________________________________________
+//                             MAIN
+//_________________________________________________________________
 
 int main() {
     
@@ -269,22 +225,22 @@ int main() {
     }
 
     char k1[50]; // Variable pour stocker la valeur de la première colonne (K1)
-    int k2, k3; // Variable pour stocker la valeur de la deuxième colonne (K2)
+    int k2, k3;  // Variable pour stocker la valeur de la deuxième colonne (K2)
     int index = 0;
- 
-  while (fscanf(file, "%[^;];%d;%d\n", k1, &k2, &k3) == 3) {
+
+    //On insere notre fichier csv d'entree dans l'avl
+    while (fscanf(file, "%[^;];%d;%d\n", k1, &k2, &k3) == 3) {
                 strcpy(ville.nom, k1);
                 ville.nombre_trajet = k2;
                 ville.depart = k3;
                 root = insertNode(root, ville);             
-    // printf("%d\n", i); 
     }
     index = 0;
     struct CityWithTrajets topTen[10];
      
-    storeCitiesInArray(root, topTen, &index);
-    freeTree(root); 
-    trierParNom(topTen, 10);
+    storeCitiesInArray(root, topTen, &index);  // Enregistre les 10 plus grandes valeurs dans le tableau 'topTen'
+    freeTree(root);                            // Libere l'avl existant 
+    trierParNom(topTen, 10);                   // On trie par ordre alphabetique les noms des 10 plus grandes valeurs  
 
     FILE *fichier = fopen("tmp/tmp.txt", "w"); // Ouvre le fichier en mode écriture
 
@@ -295,7 +251,7 @@ int main() {
         printf("Erreur lors de l'ouverture du fichier.\n");
     }
     
-    FILE *files = fopen("tmp/tmp.txt", "w");
+    FILE *files = fopen("tmp/tmp.txt", "w");    // Ouverture du fichier de sortie
 
     if (files == NULL) {
         printf("Erreur lors de l'ouverture du fichier.\n");
@@ -303,7 +259,7 @@ int main() {
     }
 
     for (int i = 0; i < 10; i++) {
-        fprintf(files, "%s;%d;%d\n", topTen[i].nom, topTen[i].nombre_trajet, topTen[i].depart);
+        fprintf(files, "%s;%d;%d\n", topTen[i].nom, topTen[i].nombre_trajet, topTen[i].depart);    // Remplissage du fichier de sortie
     }
 
     fclose(files);
