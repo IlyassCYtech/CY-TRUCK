@@ -155,7 +155,8 @@ while true; do
     esac
 
 #se promener dans le menu
-    echo "Utilisez les touches z et s pour modifier la valeur. Appuyez sur r pour quitter."
+    echo "Utilisez les touches z et s pour modifier la valeur. Appuyez sur entrée pour quitter."
+    echo "h pour aide"
     read -s -n 1 key
 
     case $key in
