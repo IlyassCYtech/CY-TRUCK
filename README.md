@@ -15,7 +15,8 @@ chmod 777 Home.sh
 ```
 ###   HOW TO USE
 1) Put the data file inside data
-   
+   ![Design sans titre](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/0d5c9432-120f-4365-8914-ab6a66dfdede)
+
 2) Enter in the folder with the program in the terminal
 
 4) Write "make" in the terminal to compil the program.
