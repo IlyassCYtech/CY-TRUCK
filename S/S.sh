@@ -42,7 +42,11 @@ cd progc
 make
 cd ..
 progc/./S
-
+if [ $? -eq 0 ]; then
+       echo "programme c fini"
+    else
+        echo "Erreur: Le programme c a crash"
+        exit 1
 cd progc
 make -f Makefile clean
 cd ..
