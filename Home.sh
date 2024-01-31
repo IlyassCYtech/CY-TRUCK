@@ -586,7 +586,28 @@ fi
 for arg in "$@"; do
         if [ "$arg" = "-h" ]; then
             # Votre code à exécuter si -h est passé en argument
-            echo "Aide : Ce script prend en charge l'option -h."
+                echo -e ""
+		echo -e ""
+		echo -e ""
+
+		echo -e "Sans interface :"
+		echo -e ""
+		echo -e ""
+		echo -e "Utilisation :"
+		echo -e ""
+		echo -e "Ecrire './Home.sh' avec différents arguments"
+		echo -e ""
+		echo -e "\tPremière argument          :  Chemin ou se trouve le fichier 'data.csv'"
+		echo -e "\tArguments supplémentaires  :  Indiquer les traitements souhaité"
+		echo -e ""
+		echo -e "\t 🟦 Pour executer traitement -d1 ajouter l'argument '-d1'"
+		echo -e "\t 🟩 Pour executer traitement -d2 ajouter l'argument '-d2'"
+		echo -e "\t 🟨 Pour executer traitement -l ajouter l'argument '-l'"
+		echo -e "\t 🟧 Pour executer traitement -t ajouter l'argument '-t'"
+		echo -e "\t 🟥 Pour executer traitement -s ajouter l'argument '-s'"
+		echo -e "\t 🟪 Pour executer traitement -bonus ajouter l'argument '-bonus'"
+
+
             exit 0
         fi
     done
