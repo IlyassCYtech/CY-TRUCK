@@ -17,19 +17,22 @@ echo "Avec interface"
 #!/bin/bash
 
 
-
-echo -e "Avec interface"
+echo -e "Avec interface :"
+echo -e ""
+echo -e ""
 echo -e "Utilisation :"
+echo -e ""
 echo -e "\t🔼 Pour monter dans l'interface"
 echo -e "\t🔽 Pour descendre dans l'interface"
-
+echo -e ""
 echo -e "Liste des traitements disponibles :"
-echo -e "\tTraitement -d1 : Description du traitement A"
-echo -e "\tTraitement -d2 : Description du traitement B"
-echo -e "\tTraitement -L : Description du traitement C"
-echo -e "\tTraitement -T : Description du traitement D"
-echo -e "\tTraitement -S : Description du traitement C"
-echo -e "\tTraitement -Bonus : Description du traitement D"
+echo -e ""
+echo -e "\tTraitement -d1    |  Conducteur avec le plus de trajets       |  Temps d'execution 6 à 8 secondes"
+echo -e "\tTraitement -d2    |  Conducteurs et la plus grande disctance  |  Temps d'execution 3 à 5 secondes"  
+echo -e "\tTraitement -L     |  Les 10 trajets les plus longs            |  Temps d'execution 6 à 8 secondes"
+echo -e "\tTraitement -T     |  Les 10 villes les plus traversées        |  Temps d'execution 25 à 30 secondes"
+echo -e "\tTraitement -S     |  Statistiques sur les étapes              |  Temps d'execution 25 à 30 secondes"
+echo -e "\tTraitement -Bonus |  Conducteur avec le plus de trajet        |  Temps d'execution 26 à 30 secondes"
 
 
 
