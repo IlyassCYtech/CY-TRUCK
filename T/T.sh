@@ -50,6 +50,7 @@ if [ $? -eq 0 ]; then
     else
         echo "Erreur: Le programme c a crash"
         exit 1
+fi
 cd progc
 make -f Makefile clean
 cd ..
