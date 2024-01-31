@@ -45,6 +45,7 @@ cd CY-TRUCKS
 ![Capture_d_écran_du_2024-01-31_17-56-11-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/2006d2b5-07bd-4d18-8a06-5a93107e8669)
 Dans le menu vous avez différents choix, vous pouvez choisir les traitements que vous souhaitez lancer et leur nombre
 ![Capture_d_écran_du_2024-01-31_17-56-54-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/5d4a7069-90d4-40ff-9849-d90b6564e06f)
+
 Vous pouvez aussi verifier que vos fichiers sont compatibles MAIS NE VOUS INQUIETEZ PAS ON LE VERIFIRA POUR VOUS. Vous pouvez aussi aller dans help si vous êtes perdu. Mais aussi vous pouvez arreter le programme.
 
 
