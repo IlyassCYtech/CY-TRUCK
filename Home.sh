@@ -17,6 +17,15 @@ else
     echo "Le dossier 'tmp' existe déjà."
 fi
 
+# Vérifier l'existence du dossier "data"
+if [ ! -d "data" ]; then
+    echo "Le dossier 'data' n'existe pas. Création du dossier..."
+    mkdir "tmp"
+    echo "Dossier 'data' créé avec succès."
+else
+    echo "Le dossier 'data' existe déjà."
+fi
+
 
 
 
