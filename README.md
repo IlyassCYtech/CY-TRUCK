@@ -48,10 +48,12 @@ make clean
 
 
 
-###   MENU
+###   MENU WITH INTERFACE
 
-![WhatsApp Image 2023-05-27 à 23 00 43](https://github.com/IlyassCYtech/CANDYCRUSH/assets/130382885/efbcfdb5-add1-46e0-a53d-5314ac837e17)
+![Capture_d_écran_du_2024-01-31_17-56-11-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/2006d2b5-07bd-4d18-8a06-5a93107e8669)
 
+
+![Capture_d_écran_du_2024-01-31_17-56-54-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/5d4a7069-90d4-40ff-9849-d90b6564e06f)
 
 In the menu you have multiple choices, you can start a new game to create a new grid and a new save.
 You can also load a game saved before. You can also look at the command to know how to play.
