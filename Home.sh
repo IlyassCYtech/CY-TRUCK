@@ -1,4 +1,25 @@
 #!/bin/bash
+
+if [ ! -d "image" ]; then
+    echo "Le dossier 'image' n'existe pas. Création du dossier..."
+    mkdir "image"
+    echo "Dossier 'image' créé avec succès."
+else
+    echo "Le dossier 'image' existe déjà."
+fi
+
+# Vérifier l'existence du dossier "tmp"
+if [ ! -d "tmp" ]; then
+    echo "Le dossier 'tmp' n'existe pas. Création du dossier..."
+    mkdir "tmp"
+    echo "Dossier 'tmp' créé avec succès."
+else
+    echo "Le dossier 'tmp' existe déjà."
+fi
+
+
+
+
 if [ $# -eq 0 ]; then
 # Chemin du dossier contenant le fichier
 dossier="data"
