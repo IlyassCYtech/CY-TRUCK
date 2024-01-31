@@ -13,15 +13,15 @@ sudo apt install make
 ```sh
 chmod 777 Home.sh 
 ```
-###   HOW TO USE WITH USER INTERFACE
-1) Put the data file inside data
+###   UTILISER AVEC UN INTERFACE
+1) S'assurer de bien avoir mis le fichier source dans le dossier data
    ![Design sans titre](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/0d5c9432-120f-4365-8914-ab6a66dfdede)
 
-2) Enter in the folder with the program in the terminal
+2) Entrer dans le dossier depuis le terminal
 ```sh
 cd CY-TRUCKS 
 ```
-3) To run the program, use the command "./Home.sh" in the terminal.
+3) Executer le programme grace à la commande ./Home.sh sans mettre aucun argument.
 ```sh
 ./Home.sh
 ```
