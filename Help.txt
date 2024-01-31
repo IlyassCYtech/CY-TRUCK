@@ -1,0 +1,11 @@
+Vous avez deux façons de lancer le programme
+1) Si vous avez lancer le programme sans argument
+  Une interface va s'ouvrir, vous pouvez naviguer avec les fleches de votre clavier et valider l'option souhaiter avec entré
+  - Si vous choisissez Traitements
+    Entrer un numero entre 1 et 6 qui definira le nombre de traitements que vous souhaiter lancer
+    
+    
+  ùeogih
+2) Si vous avez lancer le programme avec arguments
+
+temps pour chaques traitements
