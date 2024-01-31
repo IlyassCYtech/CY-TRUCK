@@ -13,7 +13,7 @@ sudo apt install make
 ```sh
 chmod 777 Home.sh 
 ```
-###   HOW TO USE
+###   HOW TO USE WITH USER INTERFACE
 1) Put the data file inside data
    ![Design sans titre](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/0d5c9432-120f-4365-8914-ab6a66dfdede)
 
@@ -21,15 +21,24 @@ chmod 777 Home.sh
 ```sh
 cd CY-TRUCKS 
 ```
-4) Write "./Home.sh" in the terminal to compil the program.
+3) To run the program, use the command "./Home.sh" in the terminal.
 ```sh
 ./Home.sh
 ```
-
-3) To run the program, use the command "./candy".
-```sh
-./candy
+###   HOW TO USE WITHOUT USER INTERFACE
+1) Make sure that data files is
+ ```sh
+/cheminduficher
 ```
+2) enter the choce that you have by putting -h in argue
+```sh
+./Home.sh /cheminduficheier -h
+```
+4) To run the program, use the command "./Home.sh" in the terminal.
+```sh
+./Home.sh /chemindufichier -d1 -d2 -l -s -t -bonus
+```
+
 ###   CLEAN
 
 1) To delete all .o files, write this command in the terminal : "make clean"
