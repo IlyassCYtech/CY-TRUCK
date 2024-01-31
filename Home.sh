@@ -179,6 +179,29 @@ while true; do
                 ((value++))
             fi
             ;;
+	 "h") 
+  		clear
+                echo -e "Avec interface :"
+		echo -e ""
+		echo -e ""
+		echo -e "Utilisation :"
+		echo -e ""
+		echo -e "\t 🔼 Pour monter dans l'interface"
+		echo -e "\t 🔽 Pour descendre dans l'interface"
+		echo -e "\t Appuyer sur Entré pour validé"
+		echo -e ""
+		echo -e "Liste des traitements disponibles :"
+		echo -e ""
+		echo -e "\t 🟦 Traitement -d1    |  Conducteur avec le plus de trajets       |  Temps d'execution 6 à 8 secondes"
+		echo -e "\t 🟩 Traitement -d2    |  Conducteurs et la plus grande disctance  |  Temps d'execution 3 à 5 secondes"  
+		echo -e "\t 🟨 Traitement -L     |  Les 10 trajets les plus longs            |  Temps d'execution 6 à 8 secondes"
+		echo -e "\t 🟧 Traitement -T     |  Les 10 villes les plus traversées        |  Temps d'execution 14 à 16 secondes"
+		echo -e "\t 🟥 Traitement -S     |  Statistiques sur les étapes              |  Temps d'execution 25 à 30 secondes"
+		echo -e "\t 🟪 Traitement -Bonus |  Conducteur avec le plus de trajet        |  Temps d'execution 26 à 30 secondes"
+		echo -e ""
+		echo -e ""
+		echo -e "Ajouter 5 sec en appuyant sur 'Entré'"
+  		sleep 5
           "z")  # Touche s
             if [ $value -gt 0 ]; then
                 ((value--))
@@ -324,11 +347,26 @@ while true; do
    		 fi
    		 if [ $value -eq 3 ]; then
         	clear
-        	echo "help"
-        	echo " touche important :"
-        	echo " z et s ou fleche: deplacement"
-        	echo " entree valider un choix"
-        	echo " traitement d1: "
+        	echo -e "Avec interface :"
+		echo -e ""
+		echo -e ""
+		echo -e "Utilisation :"
+		echo -e ""
+		echo -e "\t 🔼 Pour monter dans l'interface"
+		echo -e "\t 🔽 Pour descendre dans l'interface"
+		echo -e "\t Appuyer sur Entré pour validé"
+		echo -e ""
+		echo -e "Liste des traitements disponibles :"
+		echo -e ""
+		echo -e "\t 🟦 Traitement -d1    |  Conducteur avec le plus de trajets       |  Temps d'execution 6 à 8 secondes"
+		echo -e "\t 🟩 Traitement -d2    |  Conducteurs et la plus grande disctance  |  Temps d'execution 3 à 5 secondes"  
+		echo -e "\t 🟨 Traitement -L     |  Les 10 trajets les plus longs            |  Temps d'execution 6 à 8 secondes"
+		echo -e "\t 🟧 Traitement -T     |  Les 10 villes les plus traversées        |  Temps d'execution 14 à 16 secondes"
+		echo -e "\t 🟥 Traitement -S     |  Statistiques sur les étapes              |  Temps d'execution 25 à 30 secondes"
+		echo -e "\t 🟪 Traitement -Bonus |  Conducteur avec le plus de trajet        |  Temps d'execution 26 à 30 secondes"
+		echo -e ""
+		echo -e ""
+		echo -e "Ajouter 5 sec en appuyant sur 'Entré'"
    		sleep 5
    		
    		fi
