@@ -1,3 +1,6 @@
+#include <S.h>
+
+
 
 // stocke les informations des villes dans un tableau
 void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, int *index) {
