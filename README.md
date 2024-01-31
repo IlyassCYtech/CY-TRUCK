@@ -6,15 +6,19 @@
 
 1) Download all the files and put them in the same folder.
 
-2) Install ncurse.
+2) Install make and give you the permission to run it with.
 ```sh
-sudo apt-get install libncurses5-dev libncursesw5-dev
+sudo apt install make 
+```
+```sh
+chmod 777 Home.sh 
 ```
 ###   HOW TO USE
+1) Put the data file inside data
+   
+2) Enter in the folder with the program in the terminal
 
-1) Enter in the folder with the program in the terminal
-
-2) Write "make" in the terminal to compil the program.
+4) Write "make" in the terminal to compil the program.
 ```sh
 make
 ```
