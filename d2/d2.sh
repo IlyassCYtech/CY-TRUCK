@@ -4,7 +4,8 @@ start=$(echo $SECONDS );
 echo "--- chargement en cours du traitement D2 ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 # Commande awk
-grandedistance_csv=$(awk -F';' '{DistanceTotale[$6]+=$5} END {for (person in DistanceTotale) print person ";" DistanceTotale[person]}' $fichier | sort -t';' -k2nr | head -n 10)
+
+grandedistance_csv=$(LC_NUMERIC=C awk -F';' '{DistanceTotale[$6]+=$5} END {for (person in DistanceTotale) printf "%s;%.2f\n",person, DistanceTotale[person]}' $fichier | sort -t';' -k2nr | head -n 10)
 echo "█████▒▒▒▒▒ 50%"
 echo "$grandedistance_csv" > tmp/grandedistance_csv
 
