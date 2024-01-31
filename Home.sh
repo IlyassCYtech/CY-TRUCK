@@ -203,6 +203,7 @@ while true; do
 		echo -e ""
 		echo -e "Ajouter 5 sec en appuyant sur 'Entré'"
   		sleep 5
+    ;;
           "z")  # Touche s
             if [ $value -gt 0 ]; then
                 ((value--))
