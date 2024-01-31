@@ -17,23 +17,12 @@ else
     echo "Le dossier 'tmp' existe déjà."
 fi
 
-# Vérifier l'existence du dossier "data"
-if [ ! -d "data" ]; then
-    echo "Le dossier 'data' n'existe pas. Création du dossier..."
-    mkdir "tmp"
-    echo "Dossier 'data' créé avec succès."
-else
-    echo "Le dossier 'data' existe déjà."
-fi
-
 
 
 
 if [ $# -eq 0 ]; then
 # Chemin du dossier contenant le fichier
 dossier="data"
-
-
 
 
 
@@ -343,6 +332,44 @@ while true; do
    		sleep 5
    		
    		fi
+   		if [ $value -eq 1 ]; then
+        # Vérification du nombre de fichiers dans le dossier
+        nb_fichiers=$(ls -1 "$dossier" | wc -l)
+        if [ "$nb_fichiers" -ne 1 ]; then
+            echo "Le dossier $dossier ne doit contenir qu'un seul fichier."
+            exit 1
+        fi
+
+        # Vérification si le fichier est un .csv
+        fichier=$(ls "$dossier"/*.csv 2>/dev/null)
+        if [ -z "$fichier" ]; then
+            echo "Le fichier dans $dossier n'est pas un fichier .csv ou n'existe pas."
+            exit 1
+        fi
+        tempfile="tmp/tmp.txt"
+
+        # Supprimer la première ligne (en-tête)
+        sed '1d' "$fichier" > "$tempfile"
+
+        # Utiliser awk pour la vérification
+        awk -F ';' '
+{
+    if (!($1 ~ /^[0-9]+(\.[0-9]+)?$/ && $2 ~ /^[0-9]+(\.[0-9]+)?$/ && $5 ~ /^[0-9]+(\.[0-9]+)?$/)) {
+        print "Erreur : k1, k2 ou k5 n'est pas un nombre valide."
+        exit 1
+    }
+    if (!($3 ~ /^[A-Za-z]+$/ && $4 ~ /^[A-Za-z]+$/ && $6 ~ /^[A-Za-z]+$/)) {
+        print "Erreur : k3, k4 ou k6 n'est pas un caractère valide."
+        exit 1
+    }
+}
+' "$tempfile"
+
+        clear
+        echo "Le fichier '$fichier' est valide."
+        sleep 1
+        rm -f tmp/tmp.txt
+                fi
 
             ;;
     esac
@@ -382,6 +409,7 @@ done
   
   attendre_touche
   value=$?
+  
   if [ $value -eq 0 ]; then
   		
 	while true; do
@@ -400,16 +428,10 @@ done
 
         	
 fi
-  
+
+        
 
 
-echo "$result"
-
-# Vérification de l'existence du dossier
-if [ ! -d "$dossier" ]; then
-    echo "Le dossier $dossier n'existe pas."
-    exit 1
-fi
 
 # Vérification du nombre de fichiers dans le dossier
 nb_fichiers=$(ls -1 "$dossier" | wc -l)
@@ -424,7 +446,30 @@ if [ -z "$fichier" ]; then
     echo "Le fichier dans $dossier n'est pas un fichier .csv ou n'existe pas."
     exit 1
 fi
+tempfile="tmp/tmp.txt"
+sed '1d' "$fichier" > "$tempfile"
+        
+        # Lire chaque ligne du fichier
+        awk -F ';' '
+{
+    if (!($1 ~ /^[0-9]+(\.[0-9]+)?$/ && $2 ~ /^[0-9]+(\.[0-9]+)?$/ && $5 ~ /^[0-9]+(\.[0-9]+)?$/)) {
+        print "Erreur : k1, k2 ou k5 n'est pas un nombre valide."
+        exit 1
+    }
+    if (!($3 ~ /^[A-Za-z]+$/ && $4 ~ /^[A-Za-z]+$/ && $6 ~ /^[A-Za-z]+$/)) {
+        print "Erreur : k3, k4 ou k6 n'est pas un caractère valide."
+        exit 1
+    }
+}
+' "$tempfile"
 
+
+           
+      
+  
+
+rm -f tmp/tmp.txt
+clear
 
 
 for ((i=1; i<=$taille; i++)); do
@@ -555,6 +600,45 @@ if [ -z "$fichier" ]; then
     echo "Le fichier dans $dossier n'est pas un fichier .csv ou n'existe pas."
     exit 1
 fi
+
+# Vérification du nombre de fichiers dans le dossier
+nb_fichiers=$(ls -1 "$dossier" | wc -l)
+if [ "$nb_fichiers" -ne 1 ]; then
+    echo "Le dossier $dossier ne doit contenir qu'un seul fichier."
+    exit 1
+fi
+
+# Vérification si le fichier est un .csv
+fichier=$(ls "$dossier"/*.csv 2>/dev/null)
+if [ -z "$fichier" ]; then
+    echo "Le fichier dans $dossier n'est pas un fichier .csv ou n'existe pas."
+    exit 1
+fi
+tempfile="tmp/tmp.txt"
+sed '1d' "$fichier" > "$tempfile"
+        
+        # Lire chaque ligne du fichier
+        awk -F ';' '
+{
+    if (!($1 ~ /^[0-9]+(\.[0-9]+)?$/ && $2 ~ /^[0-9]+(\.[0-9]+)?$/ && $5 ~ /^[0-9]+(\.[0-9]+)?$/)) {
+        print "Erreur : k1, k2 ou k5 n'est pas un nombre valide."
+        exit 1
+    }
+    if (!($3 ~ /^[A-Za-z]+$/ && $4 ~ /^[A-Za-z]+$/ && $6 ~ /^[A-Za-z]+$/)) {
+        print "Erreur : k3, k4 ou k6 n'est pas un caractère valide."
+        exit 1
+    }
+}
+' "$tempfile"
+
+
+           
+      
+  
+
+rm -f tmp/tmp.txt
+clear
+
 
    clear
   echo -e "\e[33m"
