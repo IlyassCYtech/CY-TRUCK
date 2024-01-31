@@ -8,12 +8,9 @@ Vous avez deux façons de lancer le programme
   ùeogih
 2) Si vous avez lancer le programme avec arguments
 
-temps pour chaques traitements
 
-Avec interface
-toutes les commandes et traitements
-▶️◀️🔼🔽
-echo "Avec interface"
+
+
 #!/bin/bash
 
 
