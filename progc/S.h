@@ -32,12 +32,12 @@ struct CityWithTrajets {
 };
 
 void storeCitiesInArray(struct Node *root, struct CityWithTrajets *citiesArray, int *index);
-void freeNode(struct Node *node)
-int getHeight(struct Node *N)
-int max(int a, int b)
-struct Node *newNode(struct Info ville)
-struct Node *rightRotate(struct Node *y)
-struct Node *leftRotate(struct Node *x)
-int getBalance(struct Node *N)
-struct Node *insertNode(struct Node *node, struct Info ville)
-void inorderTraversal(struct Node *root)
+void freeNode(struct Node *node);
+int getHeight(struct Node *N);
+int max(int a, int b);
+struct Node *newNode(struct Info ville);
+struct Node *rightRotate(struct Node *y);
+struct Node *leftRotate(struct Node *x);
+int getBalance(struct Node *N);
+struct Node *insertNode(struct Node *node, struct Info ville);
+void inorderTraversal(struct Node *root);
