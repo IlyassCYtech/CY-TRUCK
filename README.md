@@ -2,11 +2,11 @@
 
 
 
-###   PREREQUISITE
+###   PRÉREQUIS
 
-1) Download all the files and put them in the same folder.
+1) Télécharger tous les fichiers dans le même dossier.
 
-2) Install make and give you the permission to run it with.
+2) Installer make et faire se donner les droits pour l'execution de Home.sh.
 ```sh
 sudo apt install make 
 ```
