@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# vérifie que image existe
 if [ ! -d "image" ]; then
     echo "Le dossier 'image' n'existe pas. Création du dossier..."
     mkdir "image"
@@ -32,7 +32,7 @@ fi
 sleep 1
 clear
 
-
+# vérifie qu'il ya pas d'argument pour lancer la version avec interface
 if [ $# -eq 0 ]; then
 # Chemin du dossier contenant le fichier
 dossier="data"
@@ -176,7 +176,7 @@ while true; do
   echo -e " Appuyer sur Entré pour validé"
   echo -e " Appuyer sur 🅷  pour Aide"
     read -s -n 1 key
-
+# interface
     case $key in
             $'\033') # Check if the first character is the escape character
             read -s -n 2 key  # Read the next two characters
@@ -236,6 +236,7 @@ while true; do
             ;;
          $'\0')  # Touche r
            existe=false
+	   # enregistre les choix de traitement
 for element in "${tableau[@]}"; do
     if [ "$element" == "$value" ]; then
         existe=true
@@ -259,7 +260,7 @@ done
 
 
 
-
+# menu numéro 1
 attendre_touche() {
 value=0  # Déclaration de la variable value
 
@@ -597,7 +598,7 @@ sed '1d' "$fichier" > "$tempfile"
 rm -f tmp/tmp.txt
 clear
 
-
+# lance les différents traitements en fonction des choix de l'interface
 for ((i=1; i<=$taille; i++)); do
 
 
@@ -673,7 +674,7 @@ cd ..
 fi
 
 
-
+# vérifie que'il ya h en argument pour les aides
 for arg in "$@"; do
         if [ "$arg" = "-h" ]; then
             # Votre code à exécuter si -h est passé en argument
@@ -779,7 +780,7 @@ fi
 tempfile="tmp/tmp.txt"
 sed '1d' "$fichier" > "$tempfile"
         
-        # Lire chaque ligne du fichier
+        # verifie l'etat du fichier
         awk -F ';' '
 {
     if (!($1 ~ /^[0-9]+(\.[0-9]+)?$/ && $2 ~ /^[0-9]+(\.[0-9]+)?$/ && $5 ~ /^[0-9]+(\.[0-9]+)?$/)) {
@@ -873,6 +874,7 @@ for arg in "$@"; do
         ;;
 esac
     done
+# supprime les executables c
 cd progc
 make -f Makefile clean
 cd ..
