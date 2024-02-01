@@ -596,6 +596,7 @@ for ((i=1; i<=$taille; i++)); do
 
  case "${tableau[i-1]}" in
     0)
+        echo ""
         chemin_du_script="d1/d1.sh"  # Chemin complet vers le script à exécuter
         if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
             bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
@@ -604,12 +605,8 @@ for ((i=1; i<=$taille; i++)); do
         fi
         ;;
     
-    
-    
-    
-    
-    
     1)
+    	echo ""
         chemin_du_script="d2/d2.sh"  # Chemin complet vers le script à exécuter
         if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
             bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
@@ -619,6 +616,7 @@ for ((i=1; i<=$taille; i++)); do
         ;;
     
     2)
+    	echo ""
         chemin_du_script="L/L.sh"  # Chemin complet vers le script à exécuter
         if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
             bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
@@ -627,6 +625,7 @@ for ((i=1; i<=$taille; i++)); do
         fi
         ;;
     3)
+    	echo ""
         script="T/T.sh"  # Chemin complet vers le script à exécuter
         if [ -f "$script" ]; then  # Vérifier si le fichier existe
             bash "$script" "$fichier" # Exécuter le script avec bash
@@ -635,6 +634,7 @@ for ((i=1; i<=$taille; i++)); do
         fi
         ;;
      4)
+     	echo ""
         chemin_du_script="S/S.sh"  # Chemin complet vers le script à exécuter
         if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
             bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
@@ -643,6 +643,7 @@ for ((i=1; i<=$taille; i++)); do
         fi
         ;;   
     5)
+    	echo ""
         chemin_du_script="bonus/bonus.sh"  # Chemin complet vers le script à exécuter
         if [ -f "$chemin_du_script" ]; then  # Vérifier si le fichier existe
             bash "$chemin_du_script" "$fichier" # Exécuter le script avec bash
@@ -653,11 +654,14 @@ for ((i=1; i<=$taille; i++)); do
     
     
     *)
-        echo "La valeur de result n'est ni 2 ni 3."
+        echo "erreur"
+        exit 1
         ;;
 esac
 done
-
+cd progc
+make -f Makefile clean
+cd ..
 fi
 
 
@@ -708,7 +712,11 @@ dossier="data"
  # Vérification de l'existence du dossier
 if [ ! -d "$dossier" ]; then
     echo "Le dossier $dossier n'existe pas."
-    exit 1
+    mkdir data
+    echo "Le dossier $dossier a été crée."
+    else
+    rm -rf data
+    mkdir data 
 fi
 
 
@@ -721,7 +729,7 @@ if [ -f "$chemin_fichier" ] && [[ "$chemin_fichier" == *.csv ]]; then
 
     # Copier le fichier vers le dossier "data/"
     dossier_data="data/"
-    mkdir -p "$dossier_data"  # Créer le dossier s'il n'existe pas
+    
     cp "$chemin_fichier" "$dossier_data"
     echo "Le fichier a été copié vers $dossier_data."
 else
@@ -797,6 +805,7 @@ clear
 
 shift
 for arg in "$@"; do
+        echo ""
         case "$arg" in
     -d1 | -D1)
         chemin_du_script="d1/d1.sh"  # Chemin complet vers le script à exécuter
