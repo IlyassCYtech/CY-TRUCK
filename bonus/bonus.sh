@@ -2,7 +2,7 @@
 start=$(echo $SECONDS );
 fichier="$1"
 #awk -F';' '{sum[$6]+=$2} END {for (k6 in sum) print k6";"sum[k6]}' data/data.csv | sort -t';' -k2,2nr | head -n 10 > photo/bonus.txt
-echo "--- chargement en cours du traitement Bonus ---"
+echo "--- Chargement en cours du traitement Bonus ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 
 awk -F";" ' { count[$6";"$4]++ }  {count[$6";"$3]++} $6$4 == $6$3 { count[$6";"$4]-- } END { for (key in count) print key";"count[key]  }' $fichier > tmp/tmp.csv
