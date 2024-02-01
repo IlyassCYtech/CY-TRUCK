@@ -4,7 +4,7 @@ start=$(echo $SECONDS );
 fichier="$1"
 
 
-echo "--- chargement en cours du traitement S ---"
+echo "--- Chargement en cours du traitement S ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 
 LC_NUMERIC=C awk -F';' 'NR>1 {
@@ -37,10 +37,12 @@ echo "█████▒▒▒▒▒ 50%"
 
 touch tmp/S.txt
 
+if [ ! -e "progc/./S" ]; then
+	cd progc
+	make
+	cd ..
+fi
 
-cd progc
-make
-cd ..
 progc/./S
 if [ $? -eq 0 ]; then
        echo "programme c fini"
@@ -48,9 +50,7 @@ if [ $? -eq 0 ]; then
         echo "Erreur: Le programme c a crash"
         exit 1
 fi
-cd progc
-make -f Makefile clean
-cd ..
+
 
 
   #  gsub("\\.", ".", $5)  # Remplacez les points par des virgules
@@ -95,7 +95,6 @@ echo "██████████ 100%"
 end=$(echo $SECONDS );
 
 echo "Le programme a ete execute en $(($end - $start)) secondes."
-
 
 
 
