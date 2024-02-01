@@ -1,7 +1,7 @@
 #!/bin/bash
 start=$(echo $SECONDS );
 fichier="$1"
-echo "--- chargement en cours du traitement D1 ---"
+echo "--- Chargement en cours du traitement D1 ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 #Creation de la liste trie par ordre decroissant
 
