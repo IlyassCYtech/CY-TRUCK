@@ -33,12 +33,7 @@ awk -F ';' 'BEGIN {OFS=";"} NR==FNR {data[$1]=$2; next} ($1 in data) {print $1, 
 
 echo "████████▒▒ 80%"
 
-#awk -F';' '$2 == 1 {count[$3]++} END {for (val in count) print val ";" count[val]}' data/data.csv > tmp/file.csv
-#awk -F';' 'BEGIN {OFS=";"} $3 != $4 {print $1, $2, $3, $4, $5, $6}' data/data.csv > tmp/feur.csv
 
-#awk -F';' '{count[$4]++} END {for (val in count) print val ";" count[val]}' tmp/feur.csv > tmp/donne.csv
-
-#awk -F ';' 'BEGIN {OFS=";"} NR==FNR {data[$1]=$2; next} ($1 in data) {print $1, data[$1], $2}' tmp/donne.csv tmp/file.csv > tmp/fusionne.csv
 
 touch tmp/tmp.txt
 cd progc
@@ -60,13 +55,13 @@ data_file="tmp/tmp.txt"
 
 echo "█████████▒ 90%"
 # Fichier temporaire pour le formatage des données
-formatted_data="demo/T.txt"
+formatted_data="tmp/T.txt"
 
 # Fichier de commandes pour Gnuplot
 gnuplot_commands="tmp/graph_commands.gp"
 
 # Fichier de sortie pour le graphique
-output_file="demo/T.png"
+output_file="image/T.png"
 sed -i 's/ //g' tmp/tmp.txt
 
 # Formater les données pour Gnuplot
@@ -88,7 +83,7 @@ awk -F ';' '{ print $1, $2, $3 }' "$data_file" > "$formatted_data"
 
 # Exécution du script Gnuplot
 gnuplot "$gnuplot_commands"
-xdg-open "demo/T.png" & 
+xdg-open "image/T.png" & 
 
 echo "Le graphique a été créé : $output_file"
 
@@ -98,10 +93,9 @@ echo "██████████ 100%"
 
 end=$(echo $SECONDS );
 
-rm -f "$gnuplot_commands" tmp/feur.csv tmp/fusionne.csv tmp/tmp.txt tmp/donne.csv tmp/file.csv
+rm -f "$gnuplot_commands" tmp/feur.csv tmp/fusionne.csv tmp/tmp.txt tmp/donne.csv tmp/file.csv tmp/T.txt
 
 echo "Le programme a ete execute en $(($end - $start)) secondes."
-
 
 
 
