@@ -55,7 +55,7 @@ Vous pouvez aussi verifier que vos fichiers sont compatibles MAIS NE VOUS INQUIE
 
 
 ###   COMMANDS
-![WhatsApp Image 2023-05-27 à 23 01 00](https://github.com/IlyassCYtech/CANDYCRUSH/assets/130382885/9fed242c-b82a-4dc2-b0c6-8cc1b97688a6)
+![image](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/5967b343-608a-475f-9d6f-a39a7ab23e49)
 
 Use the arrows to navigate in the menu and in your game, use "enter" to select and "m" to go to the menu 
 at any moment.
