@@ -333,6 +333,8 @@ while true; do
     esac
     
   echo -e "                                 \xF0\x9F\x9A\x9B"
+  echo -e ""
+  echo -e ""
   echo -e " 🔼 Pour monter dans l'interface"
   echo -e " 🔽 Pour descendre dans l'interface"
   echo -e " Appuyer sur Entré pour validé"
@@ -394,7 +396,7 @@ while true; do
 		echo -e "\t 🟪 Traitement -Bonus |  Conducteur avec le plus de trajet        |  Temps d'execution 26 à 30 secondes"
 		echo -e ""
 		echo -e ""
-		echo -e "Ajouter 5 sec en appuyant sur 'Entré'"
+		echo -e "Ajouter 5 sec en appuyant sur 'h'"
   		sleep 5
   		;;
         $'\0')    # Touche Entrée pour terminer
@@ -408,7 +410,13 @@ while true; do
    		 fi
    		 if [ $value -eq 3 ]; then
         	clear
-        	echo -e "Avec interface :"
+        	echo -e ""
+        	echo "           █████╗ ██╗██████╗ ███████╗"
+		echo "          ██╔══██╗██║██╔══██╗██╔════╝"
+		echo "          ███████║██║██║  ██║█████╗  "
+		echo "          ██╔══██║██║██║  ██║██╔══╝  "
+		echo "          ██║  ██║██║██████╔╝███████╗"
+		echo "          ╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝"
 		echo -e ""
 		echo -e ""
 		echo -e "Utilisation :"
@@ -865,7 +873,6 @@ for arg in "$@"; do
         ;;
 esac
     done
-
- cd progc
+cd progc
 make -f Makefile clean
 cd ..
