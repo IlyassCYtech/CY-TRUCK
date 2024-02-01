@@ -4,10 +4,11 @@
 start=$(echo $SECONDS ); #Recupere le nombre de seconde a partir duquel le terminal a ete ouvert
 
 fichier="$1"
-echo "--- chargement en cours du traitement L ---"
+echo "--- Chargement en cours du traitement L ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 
 echo "██▒▒▒▒▒▒▒▒ 20%"
+# ici le awk du traitement L qui va trier le fichier puis un sort 
 LC_NUMERIC=C awk -F';' 'NR>1 {distances[$1] += $5 } END { for (i in distances) printf "%s;%.2f\n", i, distances[i] }' $fichier | LC_NUMERIC=C sort -t';' -k2,2nr | head -n 10 | LC_NUMERIC=C sort -t ';' -k1n > tmp/L.txt
 
 echo "████████▒▒ 80%"
