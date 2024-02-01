@@ -60,13 +60,13 @@ Vous pouvez aussi verifier que vos fichiers sont compatibles MAIS NE VOUS INQUIE
 ###   COMMANDS
 ![image](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/5967b343-608a-475f-9d6f-a39a7ab23e49)
 
-Vous pouvez utilisez les fleches pour vous deplacer dans les diferents menus sans oublier que 'h' permet de d'ouvrir l'option aide
+Vous pouvez utilisez les fleches pour vous deplacer dans les differents menus sans oublier que 'h' permet de d'ouvrir l'option aide
 
 ###   AIDE
 ![Capture_d_écran_du_2024-02-01_22-20-04-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/255adbb4-6f43-4feb-99b4-2b23a889d871)
 
 ### NOMBRE DE TRAITEMENT A SPECIFIER
-ici vous pouvez spécifié votre nombre de traitment avec une aide
+ici vous pouvez spécifié votre nombre de traitement avec une aide
 ![Capture_d_écran_du_2024-02-01_22-26-45-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/b9188660-5c23-43ef-a39b-f64d32bb1510)
 
 
