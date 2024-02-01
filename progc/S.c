@@ -42,7 +42,7 @@ int main() {
     storeCitiesInArray(root, topTen, &index);     // Stockage des informations des villes dans le tableau
     freeNode(root);                               // Libération de la mémoire allouée
     
-    FILE *fichier = fopen("demo/S.txt", "w"); // Ouvre le fichier en mode écriture
+    FILE *fichier = fopen("tmp/S.txt", "w"); // Ouvre le fichier en mode écriture
 
     if (fichier != NULL) {
         fclose(fichier); // Ferme le fichier pour le vider
@@ -51,7 +51,7 @@ int main() {
         printf("Erreur lors de l'ouverture du fichier.\n");
     }
 
- FILE *files = fopen("demo/S.txt", "w");                        // Ouvre le fichier en mode écriture
+ FILE *files = fopen("tmp/S.txt", "w");                        // Ouvre le fichier en mode écriture
 
     // Vérification de la réussite d'ouverture du fichier ou non
     if (files == NULL) {
