@@ -50,7 +50,7 @@ mkdir data
 ![Capture_d_écran_du_2024-02-01_22-16-48-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/dc17f277-d0be-4bad-9220-c4b41a532d49)
 
 Dans le menu vous avez différents choix, vous pouvez choisir les traitements que vous souhaitez lancer et leur nombre
-![image](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/88966923-4fe7-4b1b-ad3d-6e2e699a8141)
+![Capture_d_écran_du_2024-02-01_22-22-05-removebg-preview(1)](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/eb42e57d-985b-425d-bec7-bcb39548940f)
 
 
 Vous pouvez aussi verifier que vos fichiers sont compatibles MAIS NE VOUS INQUIETEZ PAS ON LE VERIFIRA POUR VOUS. Vous pouvez aussi aller dans help si vous êtes perdu. Mais aussi vous pouvez arreter le programme.
