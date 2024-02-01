@@ -3,7 +3,7 @@ fichier="$1"
 start=$(echo $SECONDS );
 
 
-echo "--- chargement en cours du traitement T ---"
+echo "--- Chargement en cours du traitement T ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 
 
@@ -36,19 +36,20 @@ echo "████████▒▒ 80%"
 
 
 touch tmp/tmp.txt
-cd progc
-make
-cd ..
+if [ ! -e "progc/./T" ]; then
+	cd progc
+	make
+	cd ..
+fi
 progc/./T
+
 if [ $? -eq 0 ]; then
        echo "programme c fini"
     else
         echo "Erreur: Le programme c a crash"
         exit 1
 fi
-cd progc
-make -f Makefile clean
-cd ..
+
 # Nom du fichier contenant les données
 data_file="tmp/tmp.txt"
 
@@ -96,7 +97,6 @@ end=$(echo $SECONDS );
 rm -f "$gnuplot_commands" tmp/feur.csv tmp/fusionne.csv tmp/tmp.txt tmp/donne.csv tmp/file.csv tmp/T.txt
 
 echo "Le programme a ete execute en $(($end - $start)) secondes."
-
 
 
 
