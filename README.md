@@ -23,6 +23,7 @@ cd CY-TRUCKS
 ```sh
 mkdir data 
 ```
+
 2) S'assurer de bien avoir mis le fichier source dans le dossier data
    ![Design sans titre](https://github.com/IlyassCYtech/CY-TRUCKS/assets/130382885/0d5c9432-120f-4365-8914-ab6a66dfdede)
 3) Executer le programme grace à la commande ./Home.sh sans mettre AUCUN argument.
