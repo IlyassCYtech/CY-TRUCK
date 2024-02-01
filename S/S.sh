@@ -35,7 +35,7 @@ echo "█████▒▒▒▒▒ 50%"
 
 
 
-touch demo/S.txt
+touch tmp/S.txt
 
 
 cd progc
@@ -66,7 +66,7 @@ gnuplot_commands="tmp/graph_commands.gp"
 
 {
     echo "set terminal pngcairo size 1500,800 enhanced font 'Verdana,12'"
-    echo "set output 'demo/S.png'"
+    echo "set output 'image/S.png'"
     echo "set title 'Statistique sur les étapes'"
     echo "set xlabel 'Identifiant de trajet'"
     echo "set ylabel 'Distances en km'"
@@ -75,7 +75,7 @@ gnuplot_commands="tmp/graph_commands.gp"
     echo "set grid xtics ytics"
     echo "set datafile separator ';'"
 
-    echo "plot 'demo/S.txt' using 1:4:5 with filledcurves lc rgb '#cd7f32' title 'MaxMin' , \
+    echo "plot 'tmp/S.txt' using 1:4:5 with filledcurves lc rgb '#cd7f32' title 'MaxMin' , \
      '' using 1:3 with lines title 'Moyenne' lt -1 lw 2 lc -1, \
       '' using 1:6:xtic(2) with lines notitle lt -1 lw 1"
 
@@ -84,10 +84,10 @@ gnuplot_commands="tmp/graph_commands.gp"
 
 gnuplot "$gnuplot_commands"
 echo "████████▒▒ 80%"
-xdg-open "demo/S.png" &
+xdg-open "image/S.png" &
 echo "Le graphique a été créé : S.png"
 
-rm -f "$gnuplot_commands" tmp/done.csv
+rm -f "$gnuplot_commands" tmp/done.csv tmp/S.txt
 
 
 
@@ -95,7 +95,6 @@ echo "██████████ 100%"
 end=$(echo $SECONDS );
 
 echo "Le programme a ete execute en $(($end - $start)) secondes."
-
 
 
 
