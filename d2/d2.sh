@@ -1,7 +1,7 @@
 #!/bin/bash
 fichier="$1"
 start=$(echo $SECONDS );
-echo "--- chargement en cours du traitement D2 ---"
+echo "--- Chargement en cours du traitement D2 ---"
 echo "▒▒▒▒▒▒▒▒▒▒ 0%"
 # Commande awk
 
