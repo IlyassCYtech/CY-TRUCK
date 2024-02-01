@@ -865,3 +865,7 @@ for arg in "$@"; do
         ;;
 esac
     done
+
+ cd progc
+make -f Makefile clean
+cd ..
