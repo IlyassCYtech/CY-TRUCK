@@ -48,6 +48,7 @@ mkdir data
 
 ###   MENU AVEC INTERFACE
 ![Capture_d_écran_du_2024-02-01_22-16-48-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/dc17f277-d0be-4bad-9220-c4b41a532d49)
+
 Dans le menu vous avez différents choix, vous pouvez choisir les traitements que vous souhaitez lancer et leur nombre
 ![image](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/88966923-4fe7-4b1b-ad3d-6e2e699a8141)
 
@@ -62,4 +63,9 @@ Vous pouvez utilisez les fleches pour vous deplacer dans les diferents menus san
 
 ###   AIDE
 ![Capture_d_écran_du_2024-02-01_22-20-04-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/255adbb4-6f43-4feb-99b4-2b23a889d871)
+
+### NOMBRE DE TRAITEMENT A SPECIFIER
+ici vous pouvez spécifié votre nombre de traitment avec une aide
+![Capture_d_écran_du_2024-02-01_22-26-45-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/b9188660-5c23-43ef-a39b-f64d32bb1510)
+
 
