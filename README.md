@@ -57,9 +57,6 @@ Vous pouvez aussi verifier que vos fichiers sont compatibles MAIS NE VOUS INQUIE
 ###   COMMANDS
 ![image](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/5967b343-608a-475f-9d6f-a39a7ab23e49)
 
-Use the arrows to navigate in the menu and in your game, use "enter" to select and "m" to go to the menu 
-at any moment.
-To finish you have the "bomb" in the game. To create a bombe you must line up 5 elements of the same colors.
-The bomb permit to remove all the elements of the same colors.
+Vous pouvez utilisez les fleches pour vous deplacer dans les diferents menus sans oublier que 'h' permet de d'ouvrir l'option aide
 
 
