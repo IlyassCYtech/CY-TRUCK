@@ -17,7 +17,20 @@ else
     echo "Le dossier 'tmp' existe déjà."
 fi
 
+# Spécifie le dossier de destination pour le déplacement des fichiers
+mv_destination="demo"
 
+# Vérifie si le dossier "image" existe et n'est pas vide
+if [ -d "image" ] && [ "$(ls -A image)" ]; then
+    # Déplace tous les fichiers du dossier "image" vers le dossier de destination
+    mv image/* "$mv_destination"
+    echo "Tous les fichiers ont été déplacés vers $mv_destination"
+else
+    echo "Le dossier 'image' est soit vide, soit n'existe pas."
+fi
+
+sleep 1
+clear
 
 
 if [ $# -eq 0 ]; then
@@ -169,14 +182,14 @@ while true; do
                     fi
                     ;;
                 '[B')  # Down arrow key
-                    if [ $value -lt 6 ]; then
+                    if [ $value -lt 5 ]; then
                         ((value++))
                     fi
                     ;;
             esac
             ;;
           "s")  # Touche z
-            if [ $value -lt 6 ]; then
+            if [ $value -lt 5 ]; then
                 ((value++))
             fi
             ;;
@@ -252,9 +265,9 @@ while true; do
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
   echo -e "                           \xF0\x9F\x94\xB6 Traitement \xF0\x9F\x94\xB6"
-  echo "                        Vérification de fichier"
-  echo "                               Quitter"
-  echo "                                Help"
+  echo -e "                        Vérification de fichier"
+  echo -e "                               Quitter"
+  echo -e "                                Help"
 
 
 
@@ -268,10 +281,10 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-  echo "                              Traitement"
+  echo -e "                              Traitement"
   echo -e "                     \xF0\x9F\x94\xB6 Vérification de fichier \xF0\x9F\x94\xB6"
-  echo "                               Quitter"
-  echo "                                Help"
+  echo -e "                               Quitter"
+  echo -e "                                Help"
             ;;
         2)  
               echo -e "\e[33m"
@@ -282,10 +295,10 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-  echo "                              Traitement"
-  echo "                        Vérification de fichier"
+  echo -e "                              Traitement"
+  echo -e "                        Vérification de fichier"
   echo -e "                            \xF0\x9F\x94\xB6 Quitter \xF0\x9F\x94\xB6"
-  echo "                                Help"
+  echo -e "                                Help"
             ;;
         
             3)  
@@ -297,9 +310,9 @@ while true; do
   echo "     ╚██████╗   ██║        ██║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗"
   echo "      ╚═════╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝"
             
-  echo "                              Traitement"
-  echo "                        Vérification de fichier"
-  echo "                               Quitter "
+  echo -e "                              Traitement"
+  echo -e "                        Vérification de fichier"
+  echo -e "                               Quitter "
   echo -e "                            \xF0\x9F\x94\xB6  Help \xF0\x9F\x94\xB6"
             ;;
         *)
