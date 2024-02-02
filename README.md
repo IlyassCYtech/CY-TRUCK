@@ -66,7 +66,7 @@ Vous pouvez utilisez les fleches pour vous deplacer dans les differents menus sa
 ![Capture_d_écran_du_2024-02-01_22-20-04-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/255adbb4-6f43-4feb-99b4-2b23a889d871)
 
 ### NOMBRE DE TRAITEMENT A SPECIFIER
-ici vous pouvez spécifié votre nombre de traitement avec une aide
+ici vous pouvez spécifier votre nombre de traitement avec une aide
 ![Capture_d_écran_du_2024-02-01_22-26-45-removebg-preview](https://github.com/IlyassCYtech/CY-TRUCK/assets/130382885/b9188660-5c23-43ef-a39b-f64d32bb1510)
 
 
