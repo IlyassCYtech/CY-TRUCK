@@ -23,11 +23,19 @@ int main() {
     int index = 0;
 
     //On insere notre fichier csv d'entree dans l'avl
-    while (fscanf(file, "%[^;];%d;%d\n", k1, &k2, &k3) == 3) {
+      while (fgets(line, 1024, file)) {
+        lineNum++;
+             if (sscanf(line, "%[^;];%d;%d\n", k1, &k2, &k3) == 3) {
                 strcpy(ville.nom, k1);
                 ville.nombre_trajet = k2;
                 ville.depart = k3;
-                root = insertNode(root, ville);             
+                root = insertNode(root, ville);
+             } else {
+             fprintf(stderr, "Erreur de format à la ligne %d : contenu ignoré.\n", lineNum);
+             freeTree(root);
+             fclose(file);
+             return 1;
+        }
     }
     index = 0;
     struct CityWithTrajets topTen[10];
