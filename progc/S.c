@@ -29,15 +29,23 @@ int main() {
    
 
  // Lecture des lignes du fichiers CSV 
- while (fscanf(file, "%d;%f;%f;%f\n", &k1, &k2, &k3, &k4) == 4) {
-        
-              ville.trajet = k1;
-              ville.diff = k4-k3;
-              ville.min=k3;
-              ville.max=k4;
-              ville.moyenne=k2;
-              root = insertNode(root, ville);
-        } 
+     while (fgets(line, 1024, file)) {
+        lineNum++;
+        // Essayer de lire les 4 valeurs attendues
+        if (sscanf(line, "%d;%f;%f;%f", &k1, &k2, &k3, &k4) == 4) {
+            ville.trajet = k1;
+            ville.diff = k4 - k3;
+            ville.min = k3;
+            ville.max = k4;
+            ville.moyenne = k2;
+            root = insertNode(root, ville);
+        } else {
+            fprintf(stderr, "Erreur de format à la ligne %d : contenu ignoré.\n", lineNum);
+            freeNode(root);
+            fclose(file);
+            return 1;
+        }
+    }
 // Fermeture du fichier après avoir terminer la lecture
  fclose(file); 
     
