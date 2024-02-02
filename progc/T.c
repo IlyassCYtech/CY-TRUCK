@@ -21,6 +21,8 @@ int main() {
     char k1[50]; // Variable pour stocker la valeur de la première colonne (K1)
     int k2, k3;  // Variable pour stocker la valeur de la deuxième colonne (K2)
     int index = 0;
+    char line[1024]; // Buffer pour stocker chaque ligne lue
+    int lineNum = 0;
 
     //On insere notre fichier csv d'entree dans l'avl
       while (fgets(line, 1024, file)) {
