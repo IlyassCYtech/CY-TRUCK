@@ -26,6 +26,8 @@ int main() {
     int k1; // Variable pour stocker la valeur de la première colonne (K1)
     float k2, k3, k4; // Variable pour stocker la valeur de la deuxième colonne (K2)
     int index = 0;
+    char line[1024]; // Buffer pour stocker chaque ligne lue
+    int lineNum = 0;
    
 
  // Lecture des lignes du fichiers CSV 
